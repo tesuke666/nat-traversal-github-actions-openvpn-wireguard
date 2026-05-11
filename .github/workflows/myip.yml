@@ -1,0 +1,10 @@
+name: Show My Public IP
+
+on: workflow_dispatch
+
+jobs:
+  show-ip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get public IP
+        run: curl -s https://api.ipify.org
