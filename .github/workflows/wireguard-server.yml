@@ -81,7 +81,6 @@ jobs:
       - name: Install packages and configure system
         if: ${{ steps.check.outputs.run }}
         run: >
-          sudo rm /var/lib/man-db/auto-update
           && sudo DEBIAN_FRONTEND=noninteractive eatmydata
           apt install -y --no-install-recommends wireguard openssh-server stun-client nmap
           && ([ -f authorized_keys ] && cat authorized_keys | sudo tee /root/.ssh/authorized_keys || true)
